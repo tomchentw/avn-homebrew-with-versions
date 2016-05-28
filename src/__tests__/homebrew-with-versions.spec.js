@@ -41,6 +41,25 @@ brew link homebrew/versions/node010 > /dev/null
         });
       });
 
+      context(`requesting node@0.10.1`, function contextNode4() {
+        it(`should show install`, async function it() {
+          this.timeout(ASYNC_REQUEST_TIMEOUT);
+          const {
+            command,
+          } = await match(`node@0.10.1`);
+
+          expect(command).toEqual(
+`
+brew unlink homebrew/versions/node5 > /dev/null
+ && 
+brew install --without-npm homebrew/versions/node010 > /dev/null
+ && 
+brew link homebrew/versions/node010 > /dev/null
+`.replace(/\n/g, ``)
+          );
+        });
+      });
+
       context(`requesting node@0.12`, function contextNode4() {
         it(`should show install`, async function it() {
           this.timeout(ASYNC_REQUEST_TIMEOUT);
@@ -66,6 +85,25 @@ brew link homebrew/versions/node012 > /dev/null
           const {
             command,
           } = await match(`node@4`);
+
+          expect(command).toEqual(
+`
+brew unlink homebrew/versions/node5 > /dev/null
+ && 
+brew install --without-npm homebrew/versions/node4-lts > /dev/null
+ && 
+brew link homebrew/versions/node4-lts > /dev/null
+`.replace(/\n/g, ``)
+          );
+        });
+      });
+
+      context(`requesting node@4.3.1`, function contextNode4() {
+        it(`should show install`, async function it() {
+          this.timeout(ASYNC_REQUEST_TIMEOUT);
+          const {
+            command,
+          } = await match(`node@4.3.1`);
 
           expect(command).toEqual(
 `

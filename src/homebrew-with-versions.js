@@ -188,7 +188,13 @@ export function match(matching) {
       if (!next) {
         throw new Error(`no version matching ${matching}`);
       }
-      let command = `brew install ${next.name} > /dev/null`;
+      let command = (
+`
+brew install --without-npm ${next.name} > /dev/null
+ && 
+brew link ${next.name} > /dev/null
+`.replace(/\n/g, ``)
+      );
       if (current && current !== next) {
         command = `brew unlink ${current.name} > /dev/null && ${command}`;
       }

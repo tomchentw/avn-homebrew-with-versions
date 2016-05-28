@@ -3,6 +3,8 @@
 
 [![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 
+![o9xhiqlvq8](https://cloud.githubusercontent.com/assets/922234/15626699/58340432-24fe-11e6-89c3-182dfb025415.gif)
+
 
 ## Installation
 

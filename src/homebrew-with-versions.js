@@ -4,6 +4,8 @@ import {
   satisfies,
   gt,
   major,
+  minor,
+  valid,
   parse,
 } from 'semver';
 
@@ -130,6 +132,19 @@ function _listVersions() {
     });
 }
 
+function _isVersionSatisfies(version, mNumber) {
+  if (satisfies(version, mNumber)) {
+    return true;
+  }
+  if (valid(mNumber) && major(version) === major(mNumber)) {
+    return (
+      major(version) !== 0 ||
+      minor(version) === minor(mNumber)
+    );
+  }
+  return false;
+}
+
 /**
  * Find a highest matched version from installed versions.
  *
@@ -145,7 +160,7 @@ function _findVersion(versions, matching) {
     const current = v.isCurrent ? v : acc.current;
     let { next } = acc;
 
-    if (v.name.match(mName) && satisfies(v.version, mNumber)) {
+    if (v.name.match(mName) && _isVersionSatisfies(v.version, mNumber)) {
       if (!next) {
         next = v;
       } else if (gt(v.version, next.version)) {

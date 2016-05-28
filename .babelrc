@@ -1,0 +1,17 @@
+{
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-runtime",
+        "typecheck"
+      ]
+    }
+  },
+  "plugins": [
+    "transform-flow-comments"
+  ],
+  "presets": [
+    "es2015",
+    "stage-0"
+  ]
+}

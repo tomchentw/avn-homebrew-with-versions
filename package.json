@@ -1,20 +1,35 @@
 {
-  "name": "avn-nodebrew",
-  "version": "0.1.0",
-  "description": "avn plugin for nodebrew",
-  "homepage": "https://github.com/kuy/avn-nodebrew",
-  "bugs": {
-    "url": "https://github.com/kuy/avn-nodebrew/issues"
+  "name": "avn-homebrew-with-versions",
+  "version": "0.0.0",
+  "description": "avn plugin for homebrew with homebrew/versions",
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "npm run lint && npm run clean",
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib",
+    "lint": "cross-env NODE_ENV=test eslint .",
+    "pretest:cov": "npm run lint",
+    "pretest": "npm run lint",
+    "test:cov": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --report lcov _mocha -- $npm_package_config_mocha",
+    "test:watch": "npm test -- --watch",
+    "test": "cross-env NODE_ENV=test mocha $npm_package_config_mocha"
   },
-  "main": "index.js",
+  "config": {
+    "mocha": "--compilers js:babel-register ./src/**/__tests__/*.spec.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kuy/avn-nodebrew.git"
+    "url": "https://github.com/tomchentw/avn-homebrew-with-versions"
   },
   "keywords": [
     "avn",
     "node",
-    "nodebrew",
+    "homebrew",
+    "homebrew/versions",
     "version",
     "switch",
     "automatic",
@@ -22,15 +37,49 @@
     "change",
     "directory"
   ],
-  "author": "Yuki Kodama",
+  "author": {
+    "name": "tomchentw",
+    "email": "developer@tomchentw.com",
+    "url": "https://github.com/tomchentw"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomchentw/avn-homebrew-with-versions/issues"
+  },
+  "homepage": "https://github.com/tomchentw/avn-homebrew-with-versions",
   "dependencies": {
-    "bluebird": "^2.9.34",
-    "semver": "^5.0.1"
+    "any-promise": "^1.3.0",
+    "child-process-promise": "^2.0.2",
+    "semver": "^5.1.0",
+    "semver-regex": "^1.0.0"
   },
   "devDependencies": {
+    "avn": "^0.2.3",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-flow-comments": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "babel-runtime": "^6.9.0",
+    "codeclimate-test-reporter": "^0.3.1",
+    "cross-env": "^1.0.8",
+    "eslint": "^2.11.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
+    "expect": "^1.20.1",
+    "isparta": "^4.0.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.2",
+    "tomchentw-npm-dev": "^3.3.0"
   },
   "peerDependencies": {
-    "avn": "0.2.x"
+    "avn": "^0.2.3"
   }
 }

@@ -1,3 +1,9 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/tomchentw/avn-homebrew-with-versions/compare/v0.3.0...v0.3.1) (2016-05-28)
+
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/tomchentw/avn-homebrew-with-versions/compare/v0.2.0...v0.3.0) (2016-05-28)
 

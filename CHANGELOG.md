@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/tomchentw/avn-homebrew-with-versions/compare/v0.1.0...v0.2.0) (2016-05-28)
+
+
+### Bug Fixes
+
+* **homebrew-with-versions:** add --without-npm option and add brew link command ([6254d0a](https://github.com/tomchentw/avn-homebrew-with-versions/commit/6254d0a))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-05-28)
 

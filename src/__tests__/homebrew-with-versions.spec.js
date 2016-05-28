@@ -12,13 +12,14 @@ import {
   match,
 } from "../homebrew-with-versions";
 
-const ASYNC_REQUEST_TIMEOUT = 20000;
+const ASYNC_REQUEST_TIMEOUT = 60 * 1000;
 const UNLINK_CURRENT_NODE = `brew unlink homebrew/versions/node5 > /dev/null && `;
 
 describe(`homebrew-with-versions`, function describeHomebrewWithVersions() {
   describe(`match`, function describeMatch() {
     context(`no node installed`, function contextCurrentNode5() {
       before(function before() {
+        this.timeout(ASYNC_REQUEST_TIMEOUT);
         return exec(`brew uninstall node5`);
       });
 
@@ -90,6 +91,7 @@ describe(`homebrew-with-versions`, function describeHomebrewWithVersions() {
 
     context(`current installed node@5`, function contextCurrentNode5() {
       before(function before() {
+        this.timeout(ASYNC_REQUEST_TIMEOUT);
         return exec(`brew install node5`);
       });
 

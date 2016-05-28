@@ -14,12 +14,6 @@ avn setup
 ```
 
 
-## Todo
-
-* Add tests
-* Use CI
-
-
 ## Contributing
 
 1. Fork it

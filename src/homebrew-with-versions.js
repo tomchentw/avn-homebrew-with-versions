@@ -28,7 +28,7 @@ function versionName(version) {
   if (name && name === `iojs`) {
     return `io`;
   } else {
-    return name;
+    return `node`;
   }
 }
 

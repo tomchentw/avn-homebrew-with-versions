@@ -6,6 +6,8 @@
 
 ## Installation
 
+**Notice**: to get homebrew installed node works well with npm, please see the [instructions here][brew-npm-instructions] before continue.
+
 ```sh
 npm install -g avn-homebrew-with-versions
 avn setup
@@ -29,7 +31,7 @@ avn setup
 
 ## Acknowledgment
 
-Thanks a lot to [`avn`][avn]. and [`avn-nodebrew`][avn-nodebrew]
+Thanks a lot to [`avn`][avn] and [`avn-nodebrew`][avn-nodebrew].
 
 
 
@@ -66,5 +68,6 @@ This project is distributed under the MIT license.
 [david-dm-url]: https://david-dm.org/tomchentw/avn-homebrew-with-versions#info=devDependencies
 
 
+[brew-npm-instructions]: https://gist.github.com/DanHerbert/9520689
 [avn]: https://github.com/wbyoung/avn
 [avn-nodebrew]: https://github.com/kuy/avn-nodebrew

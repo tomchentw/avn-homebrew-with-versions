@@ -1,6 +1,11 @@
-language: node_js
-node_js:
-- '4'
+os: osx
+before_install:
+- brew update
+- brew tap homebrew/versions
+- brew unlink node
+- brew install node5 # Prerequest for test.
+install:
+- npm install
 script:
 - npm run test:cov
 after_script:

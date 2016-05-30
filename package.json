@@ -77,7 +77,7 @@
     "istanbul": "^0.4.3",
     "mocha": "^2.5.3",
     "rimraf": "^2.5.2",
-    "tomchentw-npm-dev": "^3.3.0"
+    "standard-version": "^2.2.1"
   },
   "peerDependencies": {
     "avn": "^0.2.3"
